@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import java.util.Scanner;
 
-public class Ex4_Input {
+public class Ex04_Input {
 	public static void main(String[] args) throws IOException {
 //		// 하나의 문자를 읽을 때 사용하나, 잘 안씀
 //		int keyCode = System.in.read(); // '5'
