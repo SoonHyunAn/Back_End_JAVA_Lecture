@@ -24,9 +24,9 @@ public class Ex03_FullAge {
 
 		int age;
 		if (month > bMonth)
-			age = year - bYear;
-		else if (month > bMonth)
 			age = year - bYear - 1;
+		else if (month < bMonth)
+			age = year - bYear;
 		else {
 			if (day <= bDay)
 				age = year - bYear;

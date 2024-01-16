@@ -35,5 +35,4 @@ public class Ex01_If {
 		}
 		System.out.println("score: " + score2 + ", grade: " + grade2);
 	}
-
 }
