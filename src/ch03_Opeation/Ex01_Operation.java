@@ -19,4 +19,5 @@ public class Ex01_Operation {
       char grade = score >= 70 ? '급' : '낙';
       System.out.printf("%d, %c%n", score, grade);
    }
+   
 }
