@@ -1,6 +1,6 @@
 package ch04_control;
 
-public class Ex01_if {
+public class Ex01_If {
 
 	public static void main(String[] args) {
 		int score1 = 60 + (int) (41 * Math.random());

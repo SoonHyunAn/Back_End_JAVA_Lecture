@@ -12,7 +12,7 @@ public class Ex02_LeapYear {
 		scan.close();
 
 		String result = ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0))) ? "윤년" : "평년";
-		System.out.println(year + "은/는 " + result + "입니다.");
+		System.out.println(year + "년은/는 " + result + "입니다.");
 	}
 
 }
