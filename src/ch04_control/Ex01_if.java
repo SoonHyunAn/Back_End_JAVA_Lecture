@@ -20,18 +20,22 @@ public class Ex01_If {
 		else
 			grade1 = 'D';
 		System.out.println("score: " + score1 + ", grade: " + grade1);
-		
+
 		int score2 = 60 + (int) (41 * Math.random());
 		char grade2;
-		switch (score2/10) {
+		switch (score2 / 10) {
 		case 10:
-			grade2 = 'A'; break;
+			grade2 = 'A';
+			break;
 		case 9:
-			grade2 = 'B'; break;
+			grade2 = 'B';
+			break;
 		case 8:
-			grade2 = 'C'; break;
+			grade2 = 'C';
+			break;
 		default:
-			grade2 = 'D'; break;
+			grade2 = 'D';
+			break;
 		}
 		System.out.println("score: " + score2 + ", grade: " + grade2);
 	}

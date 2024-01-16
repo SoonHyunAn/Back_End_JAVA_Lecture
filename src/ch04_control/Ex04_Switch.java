@@ -16,5 +16,4 @@ public class Ex04_Switch {
 		}
 
 	}
-
 }

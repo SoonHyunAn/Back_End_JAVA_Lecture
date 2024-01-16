@@ -32,3 +32,4 @@ public class Ex12_While {
 		System.out.println(); System.out.println(diceSum);
 	}
 }
+
