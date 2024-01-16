@@ -32,7 +32,7 @@ public class Ex03_TypeConvesion {
 		// 연산에서 자동 타입 변환
 		long k = a + b + c; // short + int + long = long
 		double l = d + e; // double + float = float
-		double m = a / b; // int/int = double
+		double m = a / b; // int/int = 가만히 두면 정수값만 추출(truncate 후 정수) // double로 변환
 		System.out.printf("k: " + k + ", l: " + l + ", m " + m);
 		
 
