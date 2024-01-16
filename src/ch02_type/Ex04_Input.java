@@ -16,4 +16,3 @@ public class Ex04_Input {
 		System.out.println(inputText);
 	}
 }
-
