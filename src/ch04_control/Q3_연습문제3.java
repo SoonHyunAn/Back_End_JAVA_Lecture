@@ -37,7 +37,7 @@ package ch04_control;
 public class Q3_연습문제3 {
 
 	public static void main(String[] args) {
-		for (int i = 0; ; i++) {
+		for (int i = 0;; i++) {
 			if (i % 2 == 1) {
 				if (i == 11)
 					break;

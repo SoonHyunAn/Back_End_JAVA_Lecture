@@ -29,6 +29,7 @@ public class Q2_연습문제2 {
 		int score = 72;
 		String grade = "";
 		switch (score / 10) {
+		case 10: // 100점은 자연스레 90점대와 같은 점수로
 		case 9:
 			grade = "A";
 			break;
