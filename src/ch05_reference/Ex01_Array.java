@@ -23,7 +23,7 @@ public class Ex01_Array {
 		score[0] = 90;
 		grade[0] = 'A';
 		for (int i = 0; i < newArray.length; i++)
-			newArray[i] = 1 + (int) (Math.random() * 6);
+			newArray[i] = (int) (Math.random() * 6 + 1);
 		System.out.println(Arrays.toString(newArray));
 		System.out.println(Arrays.toString(score));
 	}

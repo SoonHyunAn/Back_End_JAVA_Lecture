@@ -9,10 +9,12 @@ public class Q_연습문제 {
 		int count = 0;
 		String numStr = "";
 		for (int i = 1; i <= 1000; i++)
-			numStr += Integer.toString(i);
+			numStr += Integer.toString(i); 
 
 		for (int i = 0; i <= 9; i++) {
-			count = numStr.length() - numStr.replace(Integer.toString(i), "").length();
+//			count = numStr.length() - numStr.replace(Integer.toString(i), "").length();
+			String checking = "[^" + i +"]";
+			count = numStr.replaceAll(checking, "").length();
 			System.out.print(i + ": " + count + "   ");
 		}
 		System.out.println("\n"); 
@@ -52,8 +54,8 @@ public class Q_연습문제 {
 		// 4. C:/Workspace/WebProject/03.JavaScript/ch07.표준내장객체/04.String연습.js
 		// 에서 파일명(04.String연습.js)만 출력하세요.
 		System.out.println("4번 문제");
-		String path = "C:/Workspace/WebProject/03.JavaScript/ch07.표준내장객체/04.String연습.js";
-		String[] pathes = path.split("/");
+		String path = "C:\\Workspace\\WebProject\\05. JAVA\\lesson\\src\\ch05_reference\\Q_연습문제.java";
+		String[] pathes = path.split("\\\\");
 		System.out.println(pathes[pathes.length - 1] + "\n");
 
 	}

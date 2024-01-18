@@ -64,7 +64,7 @@ public class Ex13_StringMethod2 {
 		
 		String pathStr ="C:\\Tools\\jdk17\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Users\\human-24\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\human-24\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\human-24\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\human-24\\AppData\\Roaming\\npm";
 		String[] pathes =pathStr.split(";");
-		String pathReplace = pathStr.replace("[:;]", "").replace("\\", "\n");
+		String pathReplace = pathStr.replaceAll("[:;]", "").replaceAll("\\", "\n");
 		for (String path : pathes)
 			System.out.println(path);
 		System.out.println(pathReplace);
