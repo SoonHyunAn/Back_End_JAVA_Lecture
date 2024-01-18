@@ -1,6 +1,6 @@
 package ch05_reference;
 
-public class Q_연습문제 {
+public class Q1_연습문제 {
 
 	public static void main(String[] args) {
 		// 연습문제
