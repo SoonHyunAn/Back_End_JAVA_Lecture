@@ -3,14 +3,14 @@
 
 package ch06_class.sec05_melon;
 
-public class melon {
+public class melonChart {
 	private int rank;
 	private String title;
 	private String artist;
 	private String album;
 	private int like;
 
-	public melon(int rank, String title, String artist, String album, int like) {
+	public melonChart(int rank, String title, String artist, String album, int like) {
 		this.rank = rank;
 		this.title = title;
 		this.artist = artist;
