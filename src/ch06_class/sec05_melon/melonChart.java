@@ -23,5 +23,4 @@ public class melonChart {
 		return "melon [rank=" + rank + ", title=" + title + ", artist=" + artist + ", album=" + album + ", like=" + like
 				+ "]";
 	}
-
 }
