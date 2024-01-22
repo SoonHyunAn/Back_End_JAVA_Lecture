@@ -1,4 +1,4 @@
-package ch12_interface.sec11_bank;
+package ch12_interface.sec11_bank2;
 
 public class Account implements AccountService {
 	private String ano;

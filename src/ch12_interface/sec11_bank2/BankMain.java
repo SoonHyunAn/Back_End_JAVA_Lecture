@@ -1,4 +1,4 @@
-package ch12_interface.sec11_bank;
+package ch12_interface.sec11_bank2;
 
 import java.util.Scanner;
 
