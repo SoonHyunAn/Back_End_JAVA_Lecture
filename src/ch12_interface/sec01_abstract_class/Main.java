@@ -11,8 +11,8 @@ public class Main {
 
 		Dog dog = new Dog();
 		dog.cry();
-		
+
 		Animal animal = new Cat();
-		animal.cry();
+		animal.cry(); 
 	}
 }
