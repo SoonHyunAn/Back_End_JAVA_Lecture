@@ -40,7 +40,7 @@ public class Customer {
 
 	@Override
 	public int hashCode() { // 중복이면 안된다.
-		return Objects.hash(adult, age, cid, name);
+		return Objects.hash(age, cid); // 두개가 같으면 같은 해쉬 코드가 형성된다.
 	}
 
 	public int getCid() {
