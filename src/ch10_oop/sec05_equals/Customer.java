@@ -74,5 +74,4 @@ public class Customer {
 	public void setAdult(boolean adult) {
 		this.adult = adult;
 	}
-
 }
