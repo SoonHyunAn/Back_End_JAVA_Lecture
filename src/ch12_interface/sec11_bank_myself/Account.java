@@ -1,4 +1,4 @@
-package ch12_interface.sec11_bank1;
+package ch12_interface.sec11_bank_myself;
 
 public class Account  {
 	private String ano;
