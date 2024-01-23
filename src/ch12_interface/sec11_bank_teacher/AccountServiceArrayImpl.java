@@ -6,20 +6,20 @@ public class AccountServiceArrayImpl implements AccountService {
 	private static Account[] accountArray = new Account[100];
 	private static Scanner scan = new Scanner(System.in);
 	private static int index = 3;
-	
+
 	public AccountServiceArrayImpl() {
 		accountArray[0] = new Account("1000", "제임스", 10000);
 		accountArray[1] = new Account("1001", "마리", 300000);
 		accountArray[2] = new Account("1002", "브라이언", 2000000);
 	}
-	
+
 	@Override
 	public void createAccount() {
 		System.out.println("-----------");
 		System.out.println(" 계좌 생성");
 		System.out.println("-----------");
 
-		String ano = "" + (1000 + index);		// index : 현재 빈 곳을 가리킴
+		String ano = "" + (1000 + index); // index : 현재 빈 곳을 가리킴
 		System.out.print("계좌주 이름> ");
 		String owner = scan.nextLine();
 		System.out.print("최초 입금액> ");
@@ -32,10 +32,12 @@ public class AccountServiceArrayImpl implements AccountService {
 	public void accountList() {
 		System.out.println("-----------");
 		System.out.println(" 계좌 목록");
-		System.out.println("-----------");	
-		
+		System.out.println("-----------");
+
 		for (int i = 0; i < index; i++) {
 			Account acc = accountArray[i];
+			if (acc.getIsDeleted() == AccountService.DELETED)
+				continue;
 			System.out.printf("%s %-6s\t%,10d%n", acc.getAno(), acc.getOwner(), acc.getBalance());
 		}
 	}
@@ -45,7 +47,7 @@ public class AccountServiceArrayImpl implements AccountService {
 		System.out.println("-----------");
 		System.out.println("   입금");
 		System.out.println("-----------");
-		
+
 		System.out.print("계좌 번호> ");
 		String ano = scan.nextLine();
 		System.out.print("입금액> ");
@@ -63,7 +65,7 @@ public class AccountServiceArrayImpl implements AccountService {
 	public void withdraw() {
 		System.out.println("-----------");
 		System.out.println("   출금");
-		System.out.println("-----------");	
+		System.out.println("-----------");
 
 		System.out.print("계좌 번호> ");
 		String ano = scan.nextLine();
@@ -84,13 +86,27 @@ public class AccountServiceArrayImpl implements AccountService {
 
 	@Override
 	public Account findAccount(String ano) {
-		for (Account acc: accountArray) {
+		for (Account acc : accountArray) {
 			if (acc == null)
 				return null;
-			if (ano.equals(acc.getAno()))
+			if (ano.equals(acc.getAno()) && acc.getIsDeleted() != AccountService.DELETED)
 				return acc;
 		}
 		return null;
+	}
+
+	@Override
+	public void delete() {
+		System.out.println("-----------");
+		System.out.println("   삭제");
+		System.out.println("-----------");
+
+		System.out.print("계좌 번호> ");
+		String ano = scan.nextLine();
+		Account account = findAccount(ano);
+		account.setIsDeleted(AccountService.DELETED);
+		System.out.println("계좌번호 " + account.getAno() + "이/가 삭제되었습니다.");
+
 	}
 
 }
