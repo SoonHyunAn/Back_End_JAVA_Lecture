@@ -6,6 +6,27 @@ public class AccountServiceImpl implements AccountService {
 	Scanner scan = new Scanner(System.in);
 
 	@Override
+	public void createAccount(Account[] accountArray) {
+		System.out.println("----------");
+		System.out.println("계좌 생성");
+		System.out.println("----------");
+
+		System.out.println("계좌 번호> ");
+		String ano = scan.nextLine();
+		System.out.print("계좌주 이름> ");
+		String owner = scan.nextLine();
+		System.out.print("최초 입금액> ");
+		int balance = Integer.parseInt(scan.nextLine());
+		for (int i = 0; i < accountArray.length; i++) {
+			if (accountArray[i] == null) {
+				accountArray[i] = new Account(ano, owner, balance);
+				break;
+			}
+		}
+		System.out.println("계좌가 생성되었습니다.");
+	}
+
+	@Override
 	public void accountList(Account[] accountArray) {
 		System.out.println("----------");
 		System.out.println("계좌 목록");
@@ -19,31 +40,6 @@ public class AccountServiceImpl implements AccountService {
 			}
 			break;
 		}
-
-	}
-
-	@Override
-	public void createAccount(Account[] accountArray) {
-		System.out.println("----------");
-		System.out.println("계좌 생성");
-		System.out.println("----------");
-
-		System.out.println("계좌 번호> ");
-		String ano = scan.nextLine();
-		System.out.print("계좌주 이름> ");
-		String owner = scan.nextLine();
-		System.out.print("최초 입금액> ");
-		int balance = Integer.parseInt(scan.nextLine());
-		for (int i = 0; i < accountArray.length; i++) {
-	         if (accountArray[i] != null) {
-	             System.out.println(accountArray[i].getAno() + "   " + accountArray[i].getOwner() + "   "
-	                   + accountArray[i].getBalance());
-	             continue;
-	          }
-	          break;
-
-		}
-		System.out.println("계좌가 생성되었습니다.");
 
 	}
 
