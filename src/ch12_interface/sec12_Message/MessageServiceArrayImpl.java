@@ -1,6 +1,5 @@
 package ch12_interface.sec12_Message;
 
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
