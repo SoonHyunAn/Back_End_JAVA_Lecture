@@ -1,4 +1,4 @@
-package ch14_exception.Ex10_Message;
+package ch12_interface.sec12_Message;
 
 public interface MessageService {
 	int DELETED = 1;

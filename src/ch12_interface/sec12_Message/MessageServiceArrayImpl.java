@@ -1,4 +1,5 @@
-package ch14_exception.Ex10_Message;
+package ch12_interface.sec12_Message;
+
 
 import java.time.LocalDate;
 import java.util.Scanner;
