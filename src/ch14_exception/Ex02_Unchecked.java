@@ -1,5 +1,7 @@
 package ch14_exception;
 
+// try, catch
+// finally : 에러가 발생하던 아니던 무조건 실행
 public class Ex02_Unchecked {
 
 	public static void main(String[] args) {
