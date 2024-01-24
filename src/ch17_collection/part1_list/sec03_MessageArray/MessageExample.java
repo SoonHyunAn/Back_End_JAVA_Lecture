@@ -13,45 +13,41 @@ public class MessageExample {
 		// 객체 추가
 		Message message = new Message(1, "Hello", "James", LocalDateTime.now(), 0);
 		list.add(message);
-		list.add(new Message(2, "world", "maria", LocalDateTime.now(), 0));
-
+		list.add(new Message(2, "World", "Maria", LocalDateTime.now(), 0));
+		
 		for (int i = 1; i <= 3; i++) {
-			Message msg = new Message(2 + i, "내용" + i, "저장" + i, LocalDateTime.now(), 0);
+			Message msg = new Message(2+i, "내용"+i, "저자"+i, LocalDateTime.now(), 0);
 			list.add(msg);
 		}
-		for (Message m : list)
-			System.out.println(m);
-
+		
 		list = generateMessage();
-		for (Message m : list)
+		for (Message m: list)
 			System.out.println(m);
-
+		
 		// 이름이 3글자 이상인 사람의 글
 		List<Message> newList = new ArrayList<Message>();
-		for (Message msg : list) {
+		for (Message msg: list) {
 			if (msg.getWriter().length() >= 3)
 				newList.add(msg);
 		}
-		System.out.println();
-		for (Message m : newList)
+		for (Message m: newList)
 			System.out.println(m);
-
 	}
-
-	// 메시지 객체를 3개 생성해서 리스트로 반환
+	
+	// 메세지 객체를 3개 생성해서 리스트로 반환
 	static List<Message> generateMessage() {
-		List<Message> list = new ArrayList<>();
+		List<Message> list = new ArrayList<Message>();
 		Scanner scan = new Scanner(System.in);
 		for (int i = 1; i <= 3; i++) {
-			System.out.println("내용> ");
-			String content = scan.nextLine();
-			System.out.println("저자> ");
+			System.out.print("저자> ");
 			String writer = scan.nextLine();
+			System.out.print("내용> ");
+			String content = scan.nextLine();
 			Message msg = new Message(i, content, writer, LocalDateTime.now(), 0);
 			list.add(msg);
 		}
 		scan.close();
 		return list;
 	}
-
+	
 }
