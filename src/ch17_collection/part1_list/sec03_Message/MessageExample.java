@@ -1,4 +1,4 @@
-package ch17_collection.part1_list.sec03_MessageArray;
+package ch17_collection.part1_list.sec03_Message;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

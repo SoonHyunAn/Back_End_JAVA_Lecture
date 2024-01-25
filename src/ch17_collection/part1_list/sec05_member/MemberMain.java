@@ -40,7 +40,7 @@ public class MemberMain {
 		System.out.println("==========================================");
 
 		// 여성 멤버의 나이를 -1
-		for(Member m: list) {
+		for (Member m : list) {
 			if (m.getGender().equals("여"))
 				updateMember(m);
 			System.out.println(m);
