@@ -11,7 +11,7 @@ public class Ex01_Properties {
 
 		// database.properties 파일 로드
 //		prop.load(Ex01_Properties.class.getResourceAsStream("database.properties"));
-		
+
 		String fileName = "C:/Workspace/WebProject/05. JAVA/lesson/src/ch17_collection/part3_map/sec04_properties/database.properties";
 		InputStream is = new FileInputStream(fileName);
 		prop.load(is);
