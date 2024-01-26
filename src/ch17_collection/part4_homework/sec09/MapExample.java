@@ -18,7 +18,7 @@ public class MapExample {
 		Set<String> keySet = map.keySet();
 		for (String key : keySet)
 			totalScore += map.get(key);
-		System.out.println("평균점수: " + totalScore/3);
+		System.out.printf("평균점수: %.1f\n" , (double) totalScore/map.size());
 		for (String key : keySet) {
 			if(maxScore < map.get(key)) {
 				maxScore = map.get(key);

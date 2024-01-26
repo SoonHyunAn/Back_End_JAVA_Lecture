@@ -10,7 +10,7 @@ public class MemberHashSetMain {
 
 		Member m1 = new Member(21, "젬");
 		Member m2 = new Member(20, "마리아");
-		Member m3 = new Member(21, "젬");
+		Member m3 = new Member(21, "wka");
 		set.add(m1);
 		set.add(m2);
 		set.add(m3);
