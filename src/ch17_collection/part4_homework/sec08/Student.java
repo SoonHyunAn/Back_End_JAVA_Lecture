@@ -10,19 +10,18 @@ public class Student {
 		this.studentNum = studentNum;
 		this.name = name;
 	}
+	public Student(){}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Student student = (Student) o;
+		return studentNum == student.studentNum;
+	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(studentNum);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof Student) {
-			Student m = (Student) obj;
-			return m.studentNum == this.studentNum;
-		} else {
-			return false;
-		}
 	}
 }
