@@ -18,7 +18,7 @@ public class Ex02_ArrayList {
 		List<String> fruitList = Arrays.asList(new String[] { "apple", "banana", "cherry" });
 		System.out.println(fruitList);
 //		fruitList.add("mango"); // 정적인 리스트, 추가/삭제불가능
-
+		
 		// 프리미티브 타입은 Wrapper 클래스로 리스트를 생성해야 함
 		List<Integer> numList = new ArrayList<>();
 		numList.add(1);

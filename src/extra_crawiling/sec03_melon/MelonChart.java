@@ -17,14 +17,9 @@ public class MelonChart {
 
     @Override
     public String toString() {
-        return "MelonChart{" +
-                "rank=" + rank +
-                ", title='" + title + '\'' +
-                ", artist='" + artist + '\'' +
-                ", album='" + album + '\'' +
-                ", src='" + src + '\'' +
-                '}';
+        return String.format("%2d %s | %s | %s | %s", rank, title, artist, album, src);
     }
+
 
     public int getRank() {
         return rank;
