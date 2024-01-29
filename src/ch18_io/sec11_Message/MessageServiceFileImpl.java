@@ -9,9 +9,9 @@ import java.util.Scanner;
 public class MessageServiceFileImpl implements MessageService {
     private List<Message> list = new ArrayList<>();
     private int index = 101;
-    private String saveFilename = "C:/temp/message.ser";
-    private Scanner sc = new Scanner(System.in);
-    private LocalDateTime t = LocalDateTime.now();
+    private final String saveFilename = "C:/temp/message.ser";
+    private final Scanner sc = new Scanner(System.in);
+    private final LocalDateTime t = LocalDateTime.now();
     public MessageServiceFileImpl() {
         File saveFile = new File(saveFilename);
         if (saveFile.exists()) {
@@ -19,7 +19,7 @@ public class MessageServiceFileImpl implements MessageService {
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(saveFile));
                 list = (List<Message>) ois.readObject();
                 index += list.size();
-                Message msg = list.get(list.size() - 1);
+                Message msg = list.getLast();
                 index = msg.getMid() + 1;
                 ois.close();
             } catch (Exception e) {
