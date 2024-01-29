@@ -1,4 +1,8 @@
 package extra_crawiling.sec03_melon;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class MelonChart {
     private int rank;

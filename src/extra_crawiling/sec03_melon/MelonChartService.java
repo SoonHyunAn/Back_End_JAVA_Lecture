@@ -8,6 +8,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MelonChartService {
     public List<MelonChart> getMelon() throws IOException {
@@ -19,12 +20,12 @@ public class MelonChartService {
         System.out.println(trs.size());
         for (int i = 0; i < 100; i++) {
             Element tr = trs.get(i);
-            String rank_ = tr.selectFirst(".rank").text().strip();
+            String rank_ = Objects.requireNonNull(tr.selectFirst(".rank")).text().strip();
             int rank = Integer.parseInt(rank_);
-            String title = tr.selectFirst(".ellipsis.rank01 > span > a").text().strip();
-            String artist = tr.selectFirst(".ellipsis.rank02 > a").text().strip();
-            String album = tr.selectFirst(".ellipsis.rank03 > a").text().strip();
-            String src = tr.selectFirst("td:nth-child(4) > div > a > img").attr("src");
+            String title = Objects.requireNonNull(tr.selectFirst(".ellipsis.rank01 > span > a")).text().strip();
+            String artist = Objects.requireNonNull(tr.selectFirst(".ellipsis.rank02 > a")).text().strip();
+            String album = Objects.requireNonNull(tr.selectFirst(".ellipsis.rank03 > a")).text().strip();
+            String src = Objects.requireNonNull(tr.selectFirst("td:nth-child(4) > div > a > img")).attr("src");
             list.add(new MelonChart(rank, title, artist, album, src));
         }
         return list;
