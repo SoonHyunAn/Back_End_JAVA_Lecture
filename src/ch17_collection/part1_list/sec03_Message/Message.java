@@ -3,72 +3,72 @@ package ch17_collection.part1_list.sec03_Message;
 import java.time.LocalDateTime;
 
 public class Message {
-	private int mid;
-	private String content;
-	private String writer;
-	private LocalDateTime modTime;
-	private int isDeleted;
+    private int mid;
+    private String content;
+    private String writer;
+    private LocalDateTime modTime;
+    private int isDeleted;
 
-	public Message(String content, String writer) {
-		super();
-		this.content = content;
-		this.writer = writer;
-	}
+    public Message(int mid, String content, String writer, LocalDateTime modTime, int isDeleted) {
+        this.mid = mid;
+        this.content = content;
+        this.writer = writer;
+        this.modTime = modTime;
+        this.isDeleted = isDeleted;
+    }
 
-	public Message() {
-	}
+    public Message(String content, String writer) {
+        super();
+        this.content = content;
+        this.writer = writer;
+    }
 
-	public Message(int mid, String content, String writer, LocalDateTime modTime, int isDeleted) {
-		this.mid = mid;
-		this.content = content;
-		this.writer = writer;
-		this.modTime = modTime;
-		this.isDeleted = isDeleted;
-	}
+    public Message() {
+    }
 
-	@Override
-	public String toString() {
-		return "Message [mid=" + mid + ", content=" + content + ", writer=" + writer + ", modTime="
-				+ modTime.toString().substring(0, 19).replace("T", " ") + ", isDeleted=" + isDeleted + "]";
-	}
+    @Override
+    public String toString() {
+        return "Message [mid=" + mid + ", content=" + content + ", writer=" + writer + ", modTime="
+                + modTime.toString().substring(0, 19).replace("T", " ") + ", isDeleted=" + isDeleted + "]";
+    }
 
-	public int getMid() {
-		return mid;
-	}
+    public int getMid() {
+        return mid;
+    }
 
-	public void setMid(int mid) {
-		this.mid = mid;
-	}
+    public void setMid(int mid) {
+        this.mid = mid;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public String getWriter() {
-		return writer;
-	}
+    public String getWriter() {
+        return writer;
+    }
 
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
 
-	public LocalDateTime getModTime() {
-		return modTime;
-	}
+    public LocalDateTime getModTime() {
+        return modTime;
+    }
 
-	public void setModTime(LocalDateTime modTime) {
-		this.modTime = modTime;
-	}
+    public void setModTime(LocalDateTime modTime) {
+        this.modTime = modTime;
+    }
 
-	public int getIsDeleted() {
-		return isDeleted;
-	}
+    public int getIsDeleted() {
+        return isDeleted;
+    }
 
-	public void setIsDeleted(int isDeleted) {
-		this.isDeleted = isDeleted;
-	}
+    public void setIsDeleted(int isDeleted) {
+        this.isDeleted = isDeleted;
+    }
 }
