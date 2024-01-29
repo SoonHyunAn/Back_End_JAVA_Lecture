@@ -15,7 +15,7 @@ public class Ex09_PrintStream {
         ps.println("아래와 같이 포맷티트 출력도 가능합니다. ");
         ps.printf("%-6s, %8d\n", "딸기", 12000);
         ps.printf("%-6s, %8d\n", "사과", 3000);
-
+        
         ps.flush();
         ps.close();
     }
