@@ -8,6 +8,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class InterparkBookService {
     public List<InterparkBook> getBestSeller() throws IOException {
@@ -23,15 +24,16 @@ public class InterparkBookService {
                 String s = span.attr("class").strip();
                 rank_ += s.charAt(s.length() - 1);
             }
-            int rank = Integer.parseInt(rank_);
-            String title = li.selectFirst(".itemName").text().strip();
-            String author = li.selectFirst(".author").text().strip();
-            String company = li.selectFirst(".company").text().strip();
-            String price_ = li.selectFirst(".price > em").text().strip();
-            int price = Integer.parseInt(price_.replace(",", ""));
-            InterparkBook ib = new InterparkBook(rank, title, author, company, price);
-            list.add(ib);
-        }
+                int rank = Integer.parseInt(rank_);
+                String title = Objects.requireNonNull(li.selectFirst(".itemName")).text().strip();
+                String author = Objects.requireNonNull(li.selectFirst(".author")).text().strip();
+                String company = Objects.requireNonNull(li.selectFirst(".company")).text().strip();
+                String price_ = Objects.requireNonNull(li.selectFirst(".price > em")).text().strip();
+                int price = Integer.parseInt(price_.replace(",", ""));
+                InterparkBook ib = new InterparkBook(rank, title, author, company, price);
+                list.add(ib);
+            }
+
         return list;
     }
 }

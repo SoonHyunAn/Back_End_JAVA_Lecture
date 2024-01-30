@@ -6,6 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Exercise {
     public static void main(String[] args) throws IOException {
@@ -16,10 +17,10 @@ public class Exercise {
         System.out.println(lis.size());
 
         Element li = lis.get(14);
-        String title = li.selectFirst(".itemName").text().strip();
-        String author = li.selectFirst(".author").text().strip();
-        String company = li.selectFirst(".company").text().strip();
-        String price_ = li.selectFirst(".price > em").text().strip();
+        String title = Objects.requireNonNull(li.selectFirst(".itemName")).text().strip();
+        String author = Objects.requireNonNull(li.selectFirst(".author")).text().strip();
+        String company = Objects.requireNonNull(li.selectFirst(".company")).text().strip();
+        String price_ = Objects.requireNonNull(li.selectFirst(".price > em")).text().strip();
         int price = Integer.parseInt(price_.replace(",", ""));
         System.out.println(title + ", " + author + ", " + company + ", " + price);
 
