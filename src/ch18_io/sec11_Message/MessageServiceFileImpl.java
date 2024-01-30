@@ -19,7 +19,7 @@ public class MessageServiceFileImpl implements MessageService {
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(saveFile));
                 list = (List<Message>) ois.readObject();
                 index += list.size();
-                Message msg = list.getLast();
+                Message msg = list.get(list.size() - 1);
                 index = msg.getMid() + 1;
                 ois.close();
             } catch (Exception e) {
