@@ -2,7 +2,7 @@ package 백준_연습문제.sec1_입출력과_사칙연산;
 
 import java.util.Scanner;
 
-public class level11 {
+public class level11_11382 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String all = scan.nextLine();
