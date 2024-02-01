@@ -1,15 +1,16 @@
-package extra_Challenge.Ex01_WordCount;
+package extra_Challenge.Ex03_WordFrequency;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 //1. WordCount 텍스트파일
 //고유단어수  단어수  글자수
-public class WordCount {
+public class WordFreqyency {
     public static void main(String[] args) throws Exception {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:/Workspace/WebProject/05. JAVA/lesson/src/extra_Challenge/Ex01_WordCount/wordCount.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:/Workspace/WebProject/05. JAVA/lesson/src/extra_Challenge/Ex03_WordFrequency/wordFrequency.txt"))) {
             String line;
             int wordCount = 0;
             int uniqueWordCount = 0;
@@ -21,7 +22,8 @@ public class WordCount {
 
                 charCount += line.length(); // 줄의 글자 수 추가
                 wordCount += words.length; // 단어 수 추가
-
+                
+                Map<String, Integer> map = new HashMap<String, Integer>(); // 몇번 나왔는지 체크 가능
                 Set<String> uniqueWords = new HashSet<>(); // HashSet: 자동으로 중복 제거.
                 for (String word : words) {
                     uniqueWords.add(word.toLowerCase()); // 소문자로 변환하여 중복 단어 방지
