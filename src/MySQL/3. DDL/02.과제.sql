@@ -12,7 +12,6 @@ SELECT l.name 걸그룹이름, l.debut 데뷔일자, r.title 힛트송제목 FRO
 
 # 2. 데뷔일자가 빠른 5개 그룹의 힛트송은?
 # (걸그룹 이름, 데뷔일자, 힛트송 제목)
-
 SELECT l.name 걸그룹이름, l.debut 데뷔일자, r.title 힛트송제목 FROM girl_group l
 	JOIN song r
 	ON l.hit_song_id = r.sid
