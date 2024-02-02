@@ -12,15 +12,15 @@ DESC city;
 /*
     * 1. Select
 
-    SELECT 필드명
-        FROM 테이블명
-        JOIN 테이블명
-        ON 조인 조건
-        WHERE 조회 조건
-        GROUNP BY 필드명 
-        HAVING 그룹 조건
-        ORDER BY 필드명 순서
-        LIMIT 숫자 OFFSET 숫자;
+        SELECT 필드명
+            FROM 테이블명
+            JOIN 테이블명
+            ON 조인 조건
+            WHERE 조회 조건
+            GROUNP BY 필드명 
+            HAVING 그룹 조건
+            ORDER BY 필드명 순서
+            LIMIT 숫자 OFFSET 숫자;
 */
 
 SELECT * FROM city; 
@@ -215,3 +215,14 @@ Select r.Name countryName, l.Name cityName, l.Population, o.`Language` from city
     WHERE r.Continent = "Asia" AND o.IsOfficial='T'
     ORDER BY l.Population desc
 	LIMIT 10;
+
+
+/*
+*  1-8. Sub Query
+*/
+# 국내 도시만으로 새로운 테이블을 만드는 경우
+create TABLE if not exists kcity like city; # city를 기반으로 형식만 맞춰서 복사해옴, 값은 아직 없음
+INSERT INTO kcity
+    SELECT * FROM city WHERE countrycode = "KOR"
+    AND id NOT IN (SELECT id FROM kcity); 
+    // 한국에 있는 도시만 데이터를 복사해서 kcity 테이블에 추가, 오류가 뜨지만 테이블은 잘 생성
