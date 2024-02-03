@@ -75,4 +75,3 @@ SELECT a.FLAVOR from FIRST_HALF a
     ON a.FLAVOR = b.FLAVOR
     where a.TOTAL_ORDER > 3000 AND b.INGREDIENT_TYPE = 'fruit_based'
     order by a.TOTAL_ORDER DESC;
-
