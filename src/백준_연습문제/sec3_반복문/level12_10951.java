@@ -3,12 +3,14 @@ package 백준_연습문제.sec3_반복문;
 import java.util.Scanner;
 
 public class level12_10951 {
-    public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-        String[] arr = scan.nextLine().split(" ");
-        int a = Integer.parseInt(arr[0]);
-        int b = Integer.parseInt(arr[1]);
+    public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
 
+        while (sc.hasNextInt()) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            System.out.println(a + b);
+        }
     }
 }

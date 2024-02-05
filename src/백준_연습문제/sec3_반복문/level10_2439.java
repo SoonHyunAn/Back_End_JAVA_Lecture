@@ -1,14 +1,26 @@
 package 백준_연습문제.sec3_반복문;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class level10_2439 {
-    public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-        String[] arr = scan.nextLine().split(" ");
-        int a = Integer.parseInt(arr[0]);
-        int b = Integer.parseInt(arr[1]);
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int a = Integer.parseInt(br.readLine());
+        for (int i = 1; i <= a; i++) {
+            for (int k =0; k<a-i;k++)
+                bw.write(" ");
+            for (int k =0; k<i;k++)
+                bw.write("*");
+            bw.write("\n");
 
-
+        }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
