@@ -1,0 +1,29 @@
+{"results":{"common":{"errorMessage":"정상","countPerPage":"5","totalCount":"70","errorCode":"0","currentPage":"1"},
+"juso":[{"detBdNmList":"","engAddr":"30 Docheong-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do","rn":"도청로","emdNm":"이의동","zipNo":"16508","roadAddrPart2":" (이의동)",
+	"emdNo":"01","sggNm":"수원시 영통구","jibunAddr":"경기도 수원시 영통구 이의동 0 경기도청","siNm":"경기도","roadAddrPart1":"경기도 수원시 영통구 도청로 30",
+	"bdNm":"경기도청","admCd":"4111710300","udrtYn":"0","lnbrMnnm":"0","roadAddr":"경기도 수원시 영통구 도청로 30 (이의동)","lnbrSlno":"0","buldMnnm":"30",
+	"bdKdcd":"0","liNm":"","rnMgtSn":"411173177029","mtYn":"0","bdMgtSn":"4111710300100000000000001","buldSlno":"0"}
+
+{"detBdNmList":"","engAddr":"28 Docheong-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do","rn":"도청로","emdNm":"이의동","zipNo":"16508",
+"roadAddrPart2":" (이의동)","emdNo":"01","sggNm":"수원시 영통구","jibunAddr":"경기도 수원시 영통구 이의동 0 경기도교육청","siNm":"경기도",
+"roadAddrPart1":"경기도 수원시 영통구 도청로 28","bdNm":"경기도교육청","admCd":"4111710300","udrtYn":"0","lnbrMnnm":"0",
+"roadAddr":"경기도 수원시 영통구 도청로 28 (이의동)","lnbrSlno":"0","buldMnnm":"28","bdKdcd":"0","liNm":"","rnMgtSn":"411173177029",
+"mtYn":"0","bdMgtSn":"4111710300100000000000008","buldSlno":"0"},
+
+{"detBdNmList":"","engAddr":"50 Docheong-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do","rn":"도청로","emdNm":"이의동","zipNo":"16508",
+"roadAddrPart2":" (이의동)","emdNo":"01","sggNm":"수원시 영통구","jibunAddr":"경기도 수원시 영통구 이의동 177-2 경기융복합센터 복합시설관",
+"siNm":"경기도","roadAddrPart1":"경기도 수원시 영통구 도청로 50","bdNm":"경기융복합센터 복합시설관","admCd":"4111710300","udrtYn":"0",
+"lnbrMnnm":"177","roadAddr":"경기도 수원시 영통구 도청로 50 (이의동)","lnbrSlno":"2","buldMnnm":"50","bdKdcd":"0","liNm":"","rnMgtSn":"411173177029",
+"mtYn":"0","bdMgtSn":"4111710300101770002000001","buldSlno":"0"},
+
+{"detBdNmList":"","engAddr":"21 Gohwa-ro 130beon-gil, Paldal-gu, Suwon-si, Gyeonggi-do","rn":"고화로130번길","emdNm":"화서동","zipNo":"16440",
+"roadAddrPart2":" (화서동)","emdNo":"01","sggNm":"수원시 팔달구","jibunAddr":"경기도 수원시 팔달구 화서동 43-7 경기도청어린이집","siNm":"경기도",
+"roadAddrPart1":"경기도 수원시 팔달구 고화로130번길 21","bdNm":"경기도청어린이집","admCd":"4111513800","udrtYn":"0","lnbrMnnm":"43",
+"roadAddr":"경기도 수원시 팔달구 고화로130번길 21 (화서동)","lnbrSlno":"7","buldMnnm":"21","bdKdcd":"0","liNm":"","rnMgtSn":"411154328065",
+"mtYn":"0","bdMgtSn":"4111513800100430007017879","buldSlno":"0"},
+
+{"detBdNmList":"본관","engAddr":"1 Hyowon-ro, Paldal-gu, Suwon-si, Gyeonggi-do","rn":"효원로","emdNm":"매산로3가","zipNo":"16444",
+"roadAddrPart2":" (매산로3가)","emdNo":"03","sggNm":"수원시 팔달구","jibunAddr":"경기도 수원시 팔달구 매산로3가 1-1 경기도청","siNm":"경기도",
+"roadAddrPart1":"경기도 수원시 팔달구 효원로 1","bdNm":"경기도청","admCd":"4111513600","udrtYn":"0","lnbrMnnm":"1",
+"roadAddr":"경기도 수원시 팔달구 효원로 1 (매산로3가)","lnbrSlno":"1","buldMnnm":"1","bdKdcd":"0","liNm":"",
+"rnMgtSn":"411153176021","mtYn":"0","bdMgtSn":"4111513600100010001005165","buldSlno":"0"}]}}

@@ -1,0 +1,9 @@
+This is a sample text file.
+It contains multiple lines.
+We will search for the word "sample" in this file.
+If found, we'll print the line where it's located.
+sample
+sample
+sample
+sample sample
+
