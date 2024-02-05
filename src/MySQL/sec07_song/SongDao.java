@@ -1,4 +1,4 @@
-package MySQL.sec06_kcity;
+package MySQL.sec07_song;
 
 import java.io.FileInputStream;
 import java.sql.*;
@@ -6,16 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-/*
- * city Dao (Data Access Object) -- DB table 을 다루는 라이브러리
- *           Select, Insert, Update, Delete 를 처리하는 프로그램
- * */
-public class CityDao {
+public class SongDao {
     private String connStr;
     private String user;
     private String password;
 
-    public CityDao() {
+    public SongDao() {
         String path = "C:/Workspace/WebProject/05. JAVA/src/MySQL/sec05_Basic/mysql.properties";
         try {
             Properties prop = new Properties();
@@ -45,26 +41,24 @@ public class CityDao {
         return conn;
     }
 
-    public City getCityById(int id) {
+    public Song getSongBySid(int sid) {
         Connection conn = myConnection();
-        String sql = "select * from kcity where id = ?";
-//        City city = new City();     // 방법 1
-        City city = null;             // 방법 2
+        String sql = "select * from song where sid = ?";
+//        song song = new song();     // 방법 1
+        Song song = null;             // 방법 2
         try {
             // 파라미터 세팅
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
+            pstmt.setInt(1, sid);
 
             // Select 실행하고 결과 받기
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 // 방법 1
-                city = new City();
-                city.setId(rs.getInt(1));
-                city.setName(rs.getString(2));
-                city.setCountryCode(rs.getString(3));
-                city.setDistrict(rs.getString(4));
-                city.setPopulation(rs.getInt(5));
+                song = new Song();
+                song.setSid(rs.getInt(1));
+                song.setTitle(rs.getString(2));
+                song.setLyrics(rs.getString(3));
             }
             rs.close();
             pstmt.close();
@@ -72,22 +66,22 @@ public class CityDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return city;
+        return song;
     }
 
-    public City getCityByName(String name) {
+    public Song getSongByTitle(String title) {
         Connection conn = myConnection();
-        String sql = "select * from kcity where name=?";
-        City city = null; // 방법 2
+        String sql = "select * from song where title=?";
+        Song song = null; // 방법 2
         try {
             //  파라메터 세팅
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, name);
+            pstmt.setString(1, title);
 
             // Select 실행하고 결과 받기
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+                song = new Song(rs.getInt(1),rs.getString(2),rs.getString(3));
             }
             rs.close();
             pstmt.close();
@@ -95,21 +89,21 @@ public class CityDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return city;
+        return song;
     }
 
-    public List<City> getCityListAll() {
+    public List<Song> getSongListAll() {
         Connection conn = myConnection();
-        String sql = "select * from kcity";
-        List<City> list = new ArrayList<>();
+        String sql = "select * from song";
+        List<Song> list = new ArrayList<>();
         try {
             Statement stmt = conn.createStatement();
 
             // Select 실행하고 결과 받기
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                City city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
-                list.add(city);
+                Song song = new Song(rs.getInt(1), rs.getString(2), rs.getString(3));
+                list.add(song);
             }
             rs.close();
             stmt.close();
@@ -121,20 +115,20 @@ public class CityDao {
         return list;
     }
 
-    public List<City> getCityByDistrict(String district){
+    public List<Song> getSongByLyrics(String lyrics){
         Connection conn = myConnection();
-        String sql = "select * from kcity where district=?";
-        List<City> list = new ArrayList<>();
+        String sql = "select * from song where lyrics=?";
+        List<Song> list = new ArrayList<>();
         try {
             //  파라메터 세팅
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, district);
+            pstmt.setString(1, lyrics);
 
             // Select 실행하고 결과 받기
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                City city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
-                list.add(city);
+                Song song = new Song(rs.getInt(1), rs.getString(2), rs.getString(3));
+                list.add(song);
             }
             rs.close();
             pstmt.close();
@@ -144,16 +138,14 @@ public class CityDao {
         }
         return list;
     }
-    public void insertCity(City city){
+    public void insertSong(Song song){
         Connection conn = myConnection();
-        String sql = "insert into kcity values(default, ?, ?, ?, ?)";
+        String sql = "insert into song values(default, ?, ?)";
         try {
             //  파라메터 세팅
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, city.getName());
-            pstmt.setString(2, city.getCountryCode());
-            pstmt.setString(3, city.getDistrict());
-            pstmt.setInt(4, city.getPopulation());
+            pstmt.setString(1, song.getTitle());
+            pstmt.setString(2, song.getLyrics());
 
             // SQL 실행
             pstmt.executeUpdate();
@@ -165,17 +157,15 @@ public class CityDao {
         }
     }
 
-    public void updateCity(City city){
+    public void updateSong(Song song){
         Connection conn = myConnection();
-        String sql = "update kcity set name=?, countrycode=?, district=?, population=? where id = ?";
+        String sql = "update song set title=?, lyrics=? where sid = ?";
         try {
             //  파라메터 세팅
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, city.getName());
-            pstmt.setString(2, city.getCountryCode());
-            pstmt.setString(3, city.getDistrict());
-            pstmt.setInt(4, city.getPopulation());
-            pstmt.setInt(5,city.getId());
+            pstmt.setString(1, song.getTitle());
+            pstmt.setString(2, song.getLyrics());
+            pstmt.setInt(3, song.getSid());
 
             // SQL 실행
             pstmt.executeUpdate();
@@ -187,13 +177,13 @@ public class CityDao {
         }
     }
 
-    public void deleteCity(int id){
+    public void deleteSong(int sid){
         Connection conn = myConnection();
-        String sql = "delete from kcity where id = ?";
+        String sql = "delete from song where sid = ?";
         try {
             //  파라메터 세팅
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1,id);
+            pstmt.setInt(1,sid);
 
             // SQL 실행
             pstmt.executeUpdate();
