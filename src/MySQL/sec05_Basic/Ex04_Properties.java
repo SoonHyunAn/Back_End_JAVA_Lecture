@@ -24,6 +24,6 @@ public class Ex04_Properties {
 
         String connStr = "jdbc:mysql://"+ host + ":" + port + "/" + database;
         System.out.println(connStr);
-        System.out.println("DriverManager.getConnection(connStr, user, password);");
+        System.out.println("Drive_rManager.getConnection(connStr, user, password);");
     }
 }
