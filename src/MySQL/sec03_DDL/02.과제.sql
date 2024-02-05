@@ -7,7 +7,8 @@
 SELECT l.name 걸그룹이름, l.debut 데뷔일자, r.title 힛트송제목 FROM girl_group l
 	JOIN song r
 	ON l.hit_song_id = r.sid
-	WHERE Year(l.debut) = 2009;
+	WHERE Year(l.debut) = 2009; 	
+	# WHERE l.debut LIKE "2009%"; // WHERE l.debut BETWEEN DATE = "2009-01-01" AND DATE = "2009-12-31"; 
 
 
 # 2. 데뷔일자가 빠른 5개 그룹의 힛트송은?
@@ -15,11 +16,11 @@ SELECT l.name 걸그룹이름, l.debut 데뷔일자, r.title 힛트송제목 FRO
 SELECT l.name 걸그룹이름, l.debut 데뷔일자, r.title 힛트송제목 FROM girl_group l
 	JOIN song r
 	ON l.hit_song_id = r.sid
-	ORDER BY debut ASC
+	ORDER BY l.debut # ASC 생략 가능
 	LIMIT 5;
 
 # 3. 대륙별로 국가숫자, GNP의 합, 평균 국가별 GNP는?
-SELECT Continent 대륙명, COUNT(*) 국가숫자, SUM(GNP) GNP합, ROUND(AVG(GNP)) GNP평균 FROM country
+SELECT Continent 대륙명, COUNT(*) 국가숫자, ROUND((SUM(GNP))) GNP합, ROUND(AVG(GNP)) GNP평균 FROM country
 	GROUP BY Continent;
 
 
