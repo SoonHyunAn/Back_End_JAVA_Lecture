@@ -10,8 +10,8 @@ public class level4_25304 {
         for (int i = 1; i <= b; i++){
             String str = scan.nextLine();
             String[] strArr = str.split(" ");
-            int b = Integer.parseInt(strArr[0]);
-            int c = Integer.parseInt(strArr[1]);
+            int c = Integer.parseInt(strArr[0]);
+            int d = Integer.parseInt(strArr[1]);
             System.out.println(b + c);
         }
     }

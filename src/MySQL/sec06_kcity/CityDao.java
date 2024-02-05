@@ -2,6 +2,7 @@ package MySQL.sec06_kcity;
 
 import java.io.FileInputStream;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -15,7 +16,7 @@ public class CityDao {
     private String password;
 
     public CityDao() {
-        String path = "C:/Workspace/WebProject/05. JAVA/lesson/src/MySQL/sec05_Basic/mysql.properties";
+        String path = "C:/Workspace/WebProject/05. JAVA/src/MySQL/sec05_Basic/mysql.properties";
         try {
             Properties prop = new Properties();
             prop.load(new FileInputStream(path));
@@ -100,14 +101,15 @@ public class CityDao {
     public List<City> getCityListAll() {
         Connection conn = myConnection();
         String sql = "select * from kcity";
-        List<City> list = null;
+        List<City> list = new ArrayList<>();
         try {
             Statement stmt = conn.createStatement();
 
             // Select 실행하고 결과 받기
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                
+                City city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+                list.add(city);
             }
             rs.close();
             stmt.close();
