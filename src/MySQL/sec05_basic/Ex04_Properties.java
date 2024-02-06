@@ -10,7 +10,7 @@ public class Ex04_Properties {
     public static void main(String[] args) {
         // 절대 경로
         Properties prop = new Properties();			// Map<String, String>
-        String path = "C:/Workspace/Java/lesson/src/mysql/mysql.properties";
+        String path = "C:/Workspace/WebProject/05. JAVA/src/MySQL/sec05_basic/mysql.properties";
         try {
             InputStream is = new FileInputStream(path);
             prop.load(is);

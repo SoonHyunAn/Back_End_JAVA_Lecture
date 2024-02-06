@@ -20,17 +20,14 @@ public class Main {
             System.out.println(lis);
         System.out.println();
 
-//        // insert
-//        Song song3 = new Song("비스트", "Mystery");
-//        songDao.insertSong(song3);
-//        for (Song lis : list1)
-//            System.out.println(lis);
-//        System.out.println();
+        // insert
+		Song song3 = new Song("Hypeboy", "하 하 하 하입보이");
+		songDao.insertSong(song3);
 
         //update
-        Song song4 = songDao.getSongBySid(116);
-        song4.setTitle("Dumb Dumb (덤덤)");
-        song4.setLyrics("Dumb Dumb Dumb Dumb Dumb");
+        Song song4 = songDao.getSongBySid(117);
+        song4.setTitle("Hype Boy");
+        song4.setLyrics("너 없이는 매일 매일이 yeah 재미없어 어쩌지");
         songDao.updateSong(song4);
         for (Song lis : list1)
             System.out.println(lis);
@@ -41,5 +38,7 @@ public class Main {
         for (Song lis : list1)
             System.out.println(lis);
         System.out.println();
+
+        songDao.close();
     }
 }
