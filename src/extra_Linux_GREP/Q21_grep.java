@@ -15,7 +15,7 @@ public class Q21_grep {
 
         grep(search, filename);
     }
-
+    
     static void grep(String search, String filename) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
