@@ -20,9 +20,7 @@ public class User {
 	private String email;
 	private LocalDate regDate;
 	private int isDeleted;
-	
-	public User() { }
-	
+
 	public User(String uid, String pwd, String uname, String email, LocalDate regDate, int isDeleted) {
 		super();
 		this.uid = uid;
@@ -33,25 +31,8 @@ public class User {
 		this.isDeleted = isDeleted;
 	}
 
-	public User(String pwd, String uname, String email, LocalDate regDate, int isDeleted) {
-		super();
-		this.pwd = pwd;
-		this.uname = uname;
-		this.email = email;
-		this.regDate = regDate;
-		this.isDeleted = isDeleted;
-	}
-	
 	public User(String uid, String pwd, String uname, String email) {
-		super();
 		this.uid = uid;
-		this.pwd = pwd;
-		this.uname = uname;
-		this.email = email;
-	}
-
-	public User(String pwd, String uname, String email) {
-		super();
 		this.pwd = pwd;
 		this.uname = uname;
 		this.email = email;

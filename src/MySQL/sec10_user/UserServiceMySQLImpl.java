@@ -16,8 +16,7 @@ public class UserServiceMySQLImpl implements UserService{
 	@Override
 	public List<User> getUserList(int page) {		// business logic 이 들어간 곳
 		int offset = (page - 1) * count_per_page;
-		List<User> list = userDao.getUserList(count_per_page, offset);
-		return list;
+        return userDao.getUserList(count_per_page, offset);
 	}
 
 	@Override

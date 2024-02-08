@@ -27,7 +27,7 @@ public class UserTest {
 //		System.out.println(userSvc.login("admin", "asdf"));
 //		System.out.println(userSvc.login("james", "1234"));
 
-        List<User> list = userSvc.getUserList(3);
+        List<User> list = userSvc.getUserList(1);
         list.forEach(x -> System.out.println(x));
 
         userSvc.close();
