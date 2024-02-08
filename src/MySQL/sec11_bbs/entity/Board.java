@@ -118,6 +118,13 @@ public class Board {
 		this.uname = uname;
 	}
 
+
+	public String listForm(){
+		return String.format("%3d %2d %2d %s %s | %s |",
+				bid, viewCount, replyCount,
+				modTime.toString().replace("T", " ").substring(2, 16),
+				uname, title);
+	}
 	@Override
 	public String toString() {
 		return "Board{" +
