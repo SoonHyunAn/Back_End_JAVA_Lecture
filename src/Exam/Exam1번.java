@@ -1,4 +1,4 @@
-package Exam2;
+package Exam;
 
 public class Exam1번 {
     public static void main(String[] args) {

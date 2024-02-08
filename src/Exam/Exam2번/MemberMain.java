@@ -1,4 +1,4 @@
-package Exam2.Exam2번;
+package Exam.Exam2번;
 
 import java.util.ArrayList;
 import java.util.List;
