@@ -1,4 +1,6 @@
-package mysql.SQL.sec07_bbs.dao;
+package MySQL.sec11_bbs.dao;
+
+import MySQL.sec11_bbs.entity.Board;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -9,7 +11,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Properties;
 
-import mysql.SQL.sec07_bbs.entity.Board;
 
 public class BoardDao {
 	private String connStr;
@@ -18,7 +19,7 @@ public class BoardDao {
 	private Connection conn;
 	
 	public BoardDao() {
-		String path = "C:/Workspace/Java/lesson/src/mysql/mysql.properties";
+		String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/bin/MySQL/sec05_Basic/mysql.properties";
 		try {
 			Properties prop = new Properties();
 			prop.load(new FileInputStream(path));

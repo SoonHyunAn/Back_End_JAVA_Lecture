@@ -1,4 +1,6 @@
-package mysql.SQL.sec07_bbs.dao;
+package MySQL.sec11_bbs.dao;
+
+import MySQL.sec11_bbs.entity.Reply;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -11,8 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import mysql.SQL.sec07_bbs.entity.Reply;
-import mysql.SQL.sec07_bbs.entity.User;
 
 public class ReplyDao {
 	private String connStr;
@@ -21,7 +21,7 @@ public class ReplyDao {
 	private Connection conn;
 
 	public ReplyDao() {
-		String path = "C:/Workspace/Java/lesson/src/mysql/mysql.properties";
+		String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/bin/MySQL/sec05_Basic/mysql.properties";
 		try {
 			Properties prop = new Properties();
 			prop.load(new FileInputStream(path));

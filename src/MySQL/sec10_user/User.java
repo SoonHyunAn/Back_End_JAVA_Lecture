@@ -1,4 +1,4 @@
-package mysql.sec06_user;
+package MySQL.sec10_user;
 
 import java.time.LocalDate;
 

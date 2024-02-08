@@ -1,4 +1,4 @@
-package mysql.sec06_user;
+package MySQL.sec10_user;
 
 import org.mindrot.jbcrypt.BCrypt;		// 우리가 설치한 라이브러리 안에 있음 jar file
 

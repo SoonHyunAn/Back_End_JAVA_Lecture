@@ -1,4 +1,4 @@
-package mysql.sec06_user;
+package MySQL.sec10_user;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -19,7 +19,7 @@ public class UserDao {
 
 	public UserDao() {
 
-	String path = "C:/workspace/Java/lesson/src/mysql/mysql.properties";
+	String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/bin/MySQL/sec05_Basic/mysql.properties";
 	try {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(path));
