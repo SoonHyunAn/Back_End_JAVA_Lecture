@@ -65,7 +65,10 @@ public class ReplyDao {
 	}
 
 	public List<Reply> getReplyList(int bid) {
-		String sql = "select * from users where bid=?";
+		String sql = "SELECT r.*, u.uname FROM reply r" +
+				"	JOIN users u ON r.uid=u.uid" +
+				"	WHERE r.bid = ?" +
+				"	ORDER BY rid";
 		List<Reply> list = new ArrayList<>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -74,7 +77,7 @@ public class ReplyDao {
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Reply reply = new Reply(rs.getInt(1), rs.getString(2),
-						LocalDateTime.parse(rs.getString(3).replace(" ", "T")), rs.getString(4), rs.getInt(5));
+						LocalDateTime.parse(rs.getString(3).replace(" ", "T")), rs.getString(4), rs.getInt(5), rs.getString(6));
 				list.add(reply);
 			}
 			rs.close();
@@ -82,11 +85,11 @@ public class ReplyDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list; // return 해서 Main으로 넘기겠다
+		return list;
 	}
 
 	public void insertReply(Reply reply) {
-		String sql = "insert reply values(default, ?, default, ?, ?)";
+		String sql = "insert into reply values(default, ?, default, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, reply.getComment());

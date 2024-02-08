@@ -120,10 +120,9 @@ public class Board {
 
 
 	public String listForm(){
-		return String.format("%3d %2d %2d %s %s | %s |",
-				bid, viewCount, replyCount,
-				modTime.toString().replace("T", " ").substring(2, 16),
-				uname, title);
+		return String.format("%3d %2d %s  | %s | %s [%d] |",
+				bid, viewCount, modTime.toString().replace("T", " ").substring(2, 16),
+				uname, title, replyCount);
 	}
 	@Override
 	public String toString() {
