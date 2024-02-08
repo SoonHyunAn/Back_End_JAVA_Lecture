@@ -1,6 +1,7 @@
 package MySQL.sec11_bbs.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Board {
 	private int bid;
@@ -12,6 +13,9 @@ public class Board {
 	private int viewCount;
 	private int replyCount;
 	private String uname; // board table에는 없지만 join을 통해 얻어오는 정보
+	private List<Reply> replyList;
+
+
 
 	public Board() {
 	}
@@ -118,7 +122,13 @@ public class Board {
 		this.uname = uname;
 	}
 
+	public List<Reply> getReplyList() {
+		return replyList;
+	}
 
+	public void setReplyList(List<Reply> replyList) {
+		this.replyList = replyList;
+	}
 	public String listForm(){
 		return String.format("%3d %2d %s  | %s | %s [%d] |",
 				bid, viewCount, modTime.toString().replace("T", " ").substring(2, 16),

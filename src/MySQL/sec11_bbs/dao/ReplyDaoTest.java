@@ -1,4 +1,4 @@
-package MySQL.sec11_bbs.appl;
+package MySQL.sec11_bbs.dao;
 
 
 import MySQL.sec11_bbs.dao.BoardDao;
@@ -7,7 +7,7 @@ import MySQL.sec11_bbs.entity.Reply;
 
 import java.util.List;
 
-public class ReplyTest {
+public class ReplyDaoTest {
 
     public static void main(String[] args) {
         ReplyDao rDao = new ReplyDao();
