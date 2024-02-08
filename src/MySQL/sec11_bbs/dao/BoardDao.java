@@ -19,7 +19,7 @@ public class BoardDao {
 	private Connection conn;
 	
 	public BoardDao() {
-		String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/src/MySQL/sec05_Basic/mysql.properties";
+		String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/src/MySQL/sec11_bbs/mysql.properties";
 		try {
 			Properties prop = new Properties();
 			prop.load(new FileInputStream(path));
@@ -45,7 +45,9 @@ public class BoardDao {
 	}
 
 	public Board getBoard(int bid) {
-		String sql = "select * from board where bid=?";	// 골라라 전부를 보드로부터 만약 bid가 같다면
+		String sql = "SELECT b.*, u.uname FROM board b" +
+				"	JOIN users u ON b.uid = u.uid" +
+				"	WHERE b.bid = ?";	// 골라라 전부를 보드로부터 만약 bid가 같다면
 		Board board = null;		// 빈껍데기 왜? 나중에 여기에 담아야 하기 때문
 		
 		try {
@@ -55,9 +57,11 @@ public class BoardDao {
 			ResultSet rs = pstmt.executeQuery();// 쿼리 실행 sql이 pstmt에 담겨있고 execute 실행
 			
 			while (rs.next()) {
-				board = new Board(rs.getString(1), rs.getString(2), rs.getString(3), 
-						LocalDateTime.parse(rs.getString(4).replace("T", " ")), 
-						rs.getInt(5), rs.getInt(6), rs.getInt(7)); 
+				board = new Board(rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getString(4),
+						LocalDateTime.parse(rs.getString(5).replace(" ", "T")),
+						rs.getInt(6), rs.getInt(7),
+						rs.getInt(8), rs.getString(9));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -71,8 +75,8 @@ public class BoardDao {
 		return null;
 	}
 	public void insertBoard(Board board) {
-		// 해야할 일 : SQL문을 써야함 2. 쓴 SQL을 어디다 담을 공간을 준비 3. 내용물 넣을 것 준비 4. SQL문 실행 5. 자원 새지 않게 닫기
-		String sql = "insert board values(?, ?, ?, default, default, default, default, default)";
+		// 해야할 일 : 1. SQL문을 써야함 2. 쓴 SQL을 어디다 담을 공간을 준비 3. 내용물 넣을 것 준비 4. SQL문 실행 5. 자원 새지 않게 닫기
+		String sql = "insert board values(default, ?, ?, ?, default, default, default, default)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getTitle());

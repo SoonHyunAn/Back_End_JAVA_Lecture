@@ -1,6 +1,5 @@
 package MySQL.sec11_bbs.appl;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import MySQL.sec11_bbs.entity.User;
@@ -24,15 +23,16 @@ public class UserTest {
 		user = new User("sarah", "1234", "사라", "sarah@naver.com");
 		userSvc.registerUser(user);
 
-		user = userSvc.getUserByUid("admin");
-		System.out.println(user);
+//		user = userSvc.getUserByUid("admin");
+//		System.out.println(user);
+//
+//		user = userSvc.getUserByUid("james");
+//		System.out.println(user);
 
-		user = userSvc.getUserByUid("james");
-		System.out.println(user);
-
-		System.out.println(userSvc.login("admin", "1234"));
-		System.out.println(userSvc.login("admin", "asdf"));
-		System.out.println(userSvc.login("james", "1234"));
+		// 맞으면 0, 틀리면 1
+		System.out.println(userSvc.login("admin", "1234")); // 0
+		System.out.println(userSvc.login("admin", "asdf")); // 1
+		System.out.println(userSvc.login("james", "1234")); // 0
 
 		List<User> list = userSvc.getUserList(1);
 		list.forEach(x -> System.out.println(x));
