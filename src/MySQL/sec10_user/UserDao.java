@@ -19,7 +19,7 @@ public class UserDao {
 
 	public UserDao() {
 
-	String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/bin/MySQL/sec05_Basic/mysql.properties";
+	String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/src/MySQL/sec05_Basic/mysql.properties";
 	try {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(path));
