@@ -17,7 +17,7 @@ DESC city;
             JOIN 테이블명
             ON 조인 조건
             WHERE 조회 조건
-            GROUNP BY 필드명 
+            GROUP BY 필드명
             HAVING 그룹 조건
             ORDER BY 필드명 순서
             LIMIT 숫자 OFFSET 숫자;
