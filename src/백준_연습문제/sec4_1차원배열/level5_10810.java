@@ -20,6 +20,7 @@ public class level5_10810 {
                 arr[k] = e;
                 count++;
             }
+            
         }
         for (int j = 0; j < a; j++) {
             if (j == a - 1) {
