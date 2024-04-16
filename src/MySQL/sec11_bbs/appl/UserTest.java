@@ -1,10 +1,11 @@
-package MySQL.sec11_bbs.appl;
+package sec11_bbs.appl;
 
 import java.util.List;
 
-import MySQL.sec11_bbs.entity.User;
-import MySQL.sec11_bbs.service.UserService;
-import MySQL.sec11_bbs.service.UserServiceMySQLImpl;
+import sec11_bbs.entity.User;
+import sec11_bbs.service.UserServiceMySQLImpl;
+import sec11_bbs.service.UserService;
+
 
 public class UserTest {
 

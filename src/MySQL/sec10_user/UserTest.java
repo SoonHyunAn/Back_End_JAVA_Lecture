@@ -32,5 +32,4 @@ public class UserTest {
 
         userSvc.close();
     }
-
 }

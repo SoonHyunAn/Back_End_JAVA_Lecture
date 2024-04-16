@@ -1,7 +1,7 @@
-package MySQL.sec11_bbs.service;
+package sec11_bbs.service;
 import java.util.List;
 
-import MySQL.sec11_bbs.entity.User;
+import sec11_bbs.entity.User;
 
 public interface UserService {
     public static final int CORRECT_LOGIN = 0;

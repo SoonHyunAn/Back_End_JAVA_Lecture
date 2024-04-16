@@ -1,6 +1,6 @@
-package MySQL.sec11_bbs.dao;
+package sec11_bbs.dao;
 
-import MySQL.sec11_bbs.entity.User;
+import sec11_bbs.entity.User;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -21,7 +21,7 @@ public class UserDao {
 
 	public UserDao() {
 
-		String path = "C:/Workspace/WebProject/05. JAVA/Back_End_JAVA_Lecture/src/MySQL/sec11_bbs/mysql.properties";
+		String path = "C:/Workspace/JAVA/Back_End_JAVA_Lecture/src/MySQL/sec11_bbs/mysql.properties";
 	try {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(path));

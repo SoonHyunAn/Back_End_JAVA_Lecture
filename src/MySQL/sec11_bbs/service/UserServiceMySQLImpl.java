@@ -1,11 +1,11 @@
-package MySQL.sec11_bbs.service;
+package sec11_bbs.service;
 
 import java.util.List;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import MySQL.sec11_bbs.dao.UserDao;
-import MySQL.sec11_bbs.entity.User;
+import sec11_bbs.dao.UserDao;
+import sec11_bbs.entity.User;
 
 public class UserServiceMySQLImpl implements UserService {
     private UserDao userDao = new UserDao();
